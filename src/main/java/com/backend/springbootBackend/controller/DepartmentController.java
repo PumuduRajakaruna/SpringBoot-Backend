@@ -25,5 +25,10 @@ public class DepartmentController {
     public Department FetchDepartmentById(@PathVariable("id") Long departmentID){
         return departmentService.FetchDepartmentById(departmentID);
     }
+    @DeleteMapping("/departments/{id}")
+    public String DeleteDepartmentById(@PathVariable("id") Long departmentID){
+        departmentService.DeleteDepartmentById(departmentID);
+        return "Department was successfully deleted";
+    }
 }
 
