@@ -3,10 +3,7 @@ package com.backend.springbootBackend.controller;
 import com.backend.springbootBackend.entity.Department;
 import com.backend.springbootBackend.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,6 +20,10 @@ public class DepartmentController {
     @GetMapping("/departments")
     public List<Department> fetchDepartmentList(){
         return departmentService.fetchDepartmentList();
+    }
+    @GetMapping("/departments/{id}")
+    public Department FetchDepartmentById(@PathVariable("id") Long departmentID){
+        return departmentService.FetchDepartmentById(departmentID);
     }
 }
 

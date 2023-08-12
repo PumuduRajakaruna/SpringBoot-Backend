@@ -5,7 +5,9 @@ import com.backend.springbootBackend.entity.Department;
 import java.util.List;
 
 public interface DepartmentService {
-    Department saveDepartment(Department department);
+   public Department saveDepartment(Department department);
 
-    List<Department> fetchDepartmentList();
+    public List<Department> fetchDepartmentList();
+
+    public Department FetchDepartmentById(Long departmentID);
 }
